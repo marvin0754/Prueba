@@ -1,0 +1,40 @@
+{% extends 'base_form.html' %}
+{% block title %}
+    GRUD de Peliculas
+{% endblock %}
+{% block content %}
+    <h1 class="display-4 text-center ">GRUD de Peliculas</h1>
+    <div class="container table-responsive">
+        <table class="table table-bordered table-sm  text-center">
+            <thead class="thead-dark text-uppercase">
+                <tr class="table-active">
+                    <th  colspan="4" class="lead">Peliculas</th> 
+                </tr>
+                <tr class="table-active">
+                    <th>Titulo</th> 
+                    <th>Año</th>
+                    <th>Actores</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody class="table-secondary">
+            {% for instance in object_list %}  
+                <tr>
+                    <th scope="col" class="small">{{instance.titulo}}</th>
+                    <th scope="col" class="small">{{instance.year}}</th>
+                    <th scope="col" class="small">{{instance.actores}}</th>
+                    <th scope="col" > 
+                        <a class="btn btn-info btn-sm" role="button" href="{{ instance.get_absolute_url }}">Ver</a>
+                        <a class="btn btn-danger btn-sm" role="button" href="{{instance.id}}/delete/">Borrar</a>
+                        <a class="btn btn-warning btn-sm" role="button" href="{{instance.id}}/update/">Actualizar</a> 
+                    </th>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+      
+        <a class="btn btn-primary btn-dark" role="button" href="create">Crear</a>
+    </div>
+{% endblock %}
+
+

@@ -1,0 +1,36 @@
+body{
+    background: aliceblue !important;
+}
+.miclase{
+    display: flex !important;
+    width: 100%;
+}
+.busqueda{
+    flex: 30% !important;
+    display: flex;
+    justify-content: center;
+    background:rgba(1,1,1,0.1);
+    height: 800px !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    margin-top: 0;
+    overflow: scroll;
+}
+.peliculas{
+    flex: 70% !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding: 0;
+}
+.busqueda > div{
+    width: 300px;
+    margin-left: 0em;
+}
+.margin{
+    margin-left: 3.5em;
+    margin-top: 3em;
+    width: 400px;
+    height: 200px;
+}

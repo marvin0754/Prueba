@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon">dasdas</span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <a class="navbar-brand" href="#">Peliculas.Com</a>
+    
+      
+      <ul class="navbar-nav ml-auto  mt-2 rowmt-lg-0">
+        {% if request.user.is_authenticated == False %}
+        <li class="nav-item active">
+          <a class="nav-link btn btn-primary btn-dark " href="/login">Login <span class="sr-only">(current)</span></a>
+        </li>
+       
+        {% else %}
+        <li class="nav-item active">
+          <a class="nav-link btn btn-primary btn-dark " href="/peliculas">Panel Control<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link btn btn-primary btn-dark " href="/peliculas/create">Crear Peliculas</a><span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link btn btn-primary btn-dark " href="/logout">Logout <span class="sr-only">(current)</span></a>
+        </li>
+        {% endif %}
+      </ul>
+      <form class="form-inline my-2 my-lg-0 ml-auto" >
+        <input class="form-control mr-sm-2" id="clave" onkeypress="return event.keyCode != 13;" type="search"  placeholder="Buscar" aria-label="Search">
+        <button type="button" onclick="buscador(document.getElementById('clave').value)" class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+      </form>
+    </div>
+  </nav>

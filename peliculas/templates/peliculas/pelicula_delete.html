@@ -1,0 +1,20 @@
+{% extends 'base_form.html' %}
+{% block title %}
+    Lista de Peliculas
+{% endblock %}
+{% block content %}
+<div class="container mb-2">
+    <h1>Borrar Persona</h1>
+    <div class="container card">
+        <h2>{{ object.titulo}} / {{ object.year }}</h2>
+        <form  class="card-body" method="post">{% csrf_token %}
+            <p>Confirma que quiere elimar</p>
+            <input class="btn btn-danger" type="submit" value="Confirmar">
+        </form>
+    </div>
+    <br>
+    <a class="btn btn-warning" href="/peliculas/">Regresar</a>
+</div>
+
+{% endblock %}
+

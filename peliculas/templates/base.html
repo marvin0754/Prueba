@@ -1,0 +1,16 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{%block title%}{% endblock %}</title>
+    <link rel="stylesheet" href="{%static 'peliculas/css/estilos.css'%}"/>
+    <link rel="stylesheet" href="{%static 'peliculas/css/bootstrap/css/bootstrap.min.css'%}"/>
+    
+</head>
+<body>
+    {%include 'nav.html'%}
+    {%block content %}
+    {%endblock %}
+</body>
+</html>

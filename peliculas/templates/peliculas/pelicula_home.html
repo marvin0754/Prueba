@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}
+    Home
+{% endblock %}
+{% block content %}
+{% load static%}
+<script src="{%static 'peliculas/js/busqueda.js'%}" ></script>
+<div class="miclase">
+    <div class="peliculas">
+    {% for instance in object_list %}
+        <div class="card margin">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <img src="{%static 'peliculas/img/hielo.jpg'%}" class="card-img" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{ instance.titulo }}</h5>
+                    <p class="card-text">{{ instance.sinopsis }}</p>
+                    <p class="card-text"><small class="text-muted">{{ instance.fecha }}</small></p>
+                    <a href="#" class="btn btn-primary">Leer Mas</a>
+                </div>
+              </div>
+            </div>
+          </div>
+    {% endfor %}
+    </div>
+    <div class="busqueda" id="busqueda">
+    </div>
+</div>
+   
+  
+{% endblock %}
+
+

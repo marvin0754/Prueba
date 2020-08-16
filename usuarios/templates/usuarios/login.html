@@ -1,0 +1,12 @@
+{%extends 'base.html'%}
+
+{% block content %}
+<form method="POST">{% csrf_token %}
+    <label> Nombre de Usuario</label>
+    {{form.username}}
+    <label> Nombre de Usuario</label>
+    {{form.password}}
+    <button type="submit btn btn-flat sm">Iniciar Sesion</button>
+</form>
+
+{% endblock %}
